@@ -89,6 +89,10 @@ googleProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export const activeDirectoryProvider = new firebase.auth.OAuthProvider('microsoft.com');
+activeDirectoryProvider.setCustomParameters({
+  prompt:'consent',
+  tenant:'f58427e7-9b86-4621-b1fd-26ccb1cb8f79',
+})
 export const signInWithActiveDirectory = () => auth.signInWithPopup(activeDirectoryProvider);
 
 export default firebase;
