@@ -10,6 +10,7 @@ import { GlobalStyle } from './global.styles';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
+import ShopPage from "./pages/shop/shop.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -25,6 +26,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='shop/*' element={<ShopPage />} />
           <Route
               path='/signin'
               element={

@@ -17,6 +17,7 @@ const Header = () => {
   return (
       <HeaderContainer>
         <OptionLink to='/'>HOME</OptionLink>
+        <OptionLink to='/shop'>MOVIES</OptionLink>
         <OptionsContainer>
           {currentUser ? (
               <OptionLink as='div' onClick={() => dispatch(signOutStart())}>
