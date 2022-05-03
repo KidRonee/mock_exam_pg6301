@@ -1,33 +1,33 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      title: 'horror',
+      imageUrl: 'https://i.ibb.co/ccHLGVv/horror.jpg',
       id: 1,
       linkUrl: 'shop/hats',
     },
     {
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      title: 'comedy',
+      imageUrl: 'https://i.ibb.co/syTrfsZ/comedy.jpg',
       id: 2,
       linkUrl: 'shop/jackets',
     },
     {
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      title: 'romantic',
+      imageUrl: 'https://i.ibb.co/wKBvcqW/romantic.jpg',
       id: 3,
       linkUrl: 'shop/sneakers',
     },
     {
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      title: 'action',
+      imageUrl: 'https://i.ibb.co/5KPm00s/action.jpg',
       size: 'large',
       id: 4,
       linkUrl: 'shop/womens',
     },
     {
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      title: 'sci-fi',
+      imageUrl: 'https://i.ibb.co/bd9cLWh/sci-fi.jpg',
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens',
