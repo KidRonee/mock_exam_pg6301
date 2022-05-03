@@ -84,15 +84,26 @@ export const getCurrentUser = () => {
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+//This works fine
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
+//This doesn't
 export const activeDirectoryProvider = new firebase.auth.OAuthProvider('microsoft.com');
+activeDirectoryProvider.addScope('openid')
+activeDirectoryProvider.addScope('profile')
 activeDirectoryProvider.setCustomParameters({
   prompt:'consent',
-  tenant:'f58427e7-9b86-4621-b1fd-26ccb1cb8f79',
+  tenant:'1bf885c4-8343-4949-8043-50449d9a6d34',
+  code_challenge: 'YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl',
 })
-export const signInWithActiveDirectory = () => auth.signInWithPopup(activeDirectoryProvider);
+
+activeDirectoryProvider.addScope('openid');
+activeDirectoryProvider.addScope('profile');
+export const signInWithActiveDirectory = () => auth.signInWithPopup(activeDirectoryProvider).then((res) => {
+  const credential = activeDirectoryProvider.credential(res);
+  const accessToken = credential.accessToken;
+});
 
 export default firebase;
